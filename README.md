@@ -1,5 +1,5 @@
 # weatherjs
-Simple cli to find out the current temperature in any city, using openweathermap API.
+Simple CLI to find out the current temperature in any city, using openweathermap API.
 
 # How to install it:
 Run npm i;
