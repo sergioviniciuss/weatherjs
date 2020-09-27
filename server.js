@@ -1,10 +1,20 @@
-const express = require('express')
-const app = express()
+const express = require("express");
+const bodyParser = require("body-parser");
+const app = express();
 
-app.get('/', function (req, res) {
-  res.send('Hello World!')
-})
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.set("view engine", "ejs");
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
-})
+app.get("/", (req, res) => {
+  res.render("index");
+});
+
+app.listen(3000, () => {
+  console.log("Example app listening on port 3000!");
+});
+
+app.post("/", (req, res) => {
+  res.render("index");
+  console.log(req.body.city);
+});
